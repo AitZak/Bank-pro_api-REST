@@ -1,0 +1,23 @@
+App\Entity\User:
+  user_{1..10}:
+    firstname: <firstname()>
+    lastname: <lastname()>
+    email: <email()>
+    apiKey: <uuid()>
+    address: <address()>
+    createdAt: <dateTimeBetween("-200 days", "now")>
+    country: <country()>
+    subscription: '@subscription*'
+    cards: '@card*'
+App\Entity\Card:
+  card_{1..20}:
+    name: <word(1)>
+    creditCardType: <creditCardType()>
+    creditCardNumber: <creditCardNumber()>
+    currencyCode: <currencyCode()>
+    value: <numberBetween(0, 100000)>
+App\Entity\Subscription:
+  subscription_{1..5}:
+    name: <word(2)>
+    slogan: <catchPhrase()>
+    url: <url()>
